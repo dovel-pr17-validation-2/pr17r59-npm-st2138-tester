@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node src/server.ts",
     "build": "tsc && node scripts/copy-ui.mjs",
-    "test": "node --require ts-node/register --test tests/*.test.js",
+    "test": "npm run build && node --require ./tests/load-compiled-src.js --test tests/*.test.js",
     "start": "node dist/server.js",
     "clean": "rm -rf dist"
   },
@@ -40,6 +40,6 @@
     "@types/express": "^5.0.6",
     "@types/node": "^26.6.6",
     "ts-node": "^10.9.0",
-    "typescript": "^5.0.0"
+    "typescript": "^7.0.2"
   }
 }
